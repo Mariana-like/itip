@@ -158,7 +158,7 @@ class Items extends CI_Controller {
         
         $cur_page = $this->input->post('cur_page');
         $per_page = $this->input->post('per_page');
-        $tmp_order = ($cur_page - 1) * $per_page;
+        $tmp_order = $cur_page == 0 ? 0 : ($cur_page - 1) * $per_page;       
 
         $count = count($this->input->post('items'));       
         
